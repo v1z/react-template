@@ -11,3 +11,12 @@
 - [Plop](https://plopjs.com/) (to generate new components from templates)
 - Keyboard users support with [Focus Ring](https://www.youtube.com/watch?v=ilj2P5-5CjI)
 - Some default components (a11y ready)
+
+# CLI scripts
+
+- `start` - starting webpack-dev-server on 3000 port
+- `build` - making production build and put it in `dist` folder
+- `story` - starting storybook on 9000 port
+- `make` - generate new file from template
+- `lint` - run both eslint and stylelint with dev configs
+- `format` - run both eslint and stylelint with prod configs and `--fix` option
