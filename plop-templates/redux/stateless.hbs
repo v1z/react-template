@@ -6,15 +6,18 @@ import cn from 'classnames';
 
 import s from './{{pascalCase name}}.css';
 
-const {{pascalCase name}} = ({ className, clickHandler, counter }) => (
+export const {{pascalCase name}} = ({ className, clickHandler, counter }) => (
   <div className={cn(s.root, className)}>
     {/* component content */}
   </div>
 );
 
 {{pascalCase name}}.propTypes = {
+  /** Class dropped by component's parent (BEM mixing) */
   className: string,
+  /** Redux store field */
   counter: number,
+  /** Redux action */
   clickHandler: func,
 };
 

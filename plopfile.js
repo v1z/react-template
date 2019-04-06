@@ -52,7 +52,7 @@ module.exports = plop => {
         {
           type: 'add',
           path: `${componentsDir}/{{pascalCase name}}/{{pascalCase name}}.stories.jsx`,
-          templateFile: `${templatesDir}/story.hbs`,
+          templateFile: `${templatesDir}${data.connected ? '/redux' : ''}/story.hbs`,
           data: { type: 'type' },
         }
       );

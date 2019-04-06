@@ -1170,6 +1170,21 @@
     react-select "^2.3.0"
     util-deprecate "^1.0.2"
 
+"@storybook/addon-notes@^5.0.6":
+  version "5.0.6"
+  resolved "https://nexus.datamind.ru/repository/npm-all/@storybook/addon-notes/-/addon-notes-5.0.6.tgz#d7dd81b490956df817cfd07b9a7b525dcc0bbfb2"
+  integrity sha512-qVHGs1ltBK5jJwjFyy6fwnfGqtgJJujUga1ooaL4GSO3ke5u71eVMYPegssukquKtr9rnT/CiCJ7As5NDsK/DQ==
+  dependencies:
+    "@storybook/addons" "5.0.6"
+    "@storybook/client-logger" "5.0.6"
+    "@storybook/components" "5.0.6"
+    "@storybook/core-events" "5.0.6"
+    "@storybook/theming" "5.0.6"
+    core-js "^2.6.5"
+    markdown-to-jsx "^6.9.1"
+    prop-types "^15.6.2"
+    util-deprecate "^1.0.2"
+
 "@storybook/addon-storysource@^5.0.6":
   version "5.0.6"
   resolved "https://nexus.datamind.ru/repository/npm-all/@storybook/addon-storysource/-/addon-storysource-5.0.6.tgz#1f52bdd90e286b5f7d081da6a3e05723a422c995"

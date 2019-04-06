@@ -6,11 +6,13 @@ import cn from 'classnames';
 
 import s from './{{pascalCase name}}.css';
 
-class {{pascalCase name}} extends PureComponent {
+export class {{pascalCase name}} extends PureComponent {
   static propTypes = {
-    /** Класс прокидываемый от родителя (БЭМ миксование) */
+    /** Class dropped by component's parent (BEM mixing) */
     className: string,
+    /** Redux store field */
     counter: number,
+    /** Redux action */
     clickHandler: func,
   };
 
