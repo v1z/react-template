@@ -8,9 +8,9 @@
     "start": "NODE_ENV=development webpack-dev-server --open --hot --mode development",
     "make": "plop",
     "lint:css": "stylelint 'src/components/**/*.css'",
-    "lint:js": "eslint 'src/**/*.{js, jsx}' '.storybook/**/*.js'",
+    "lint:js": "eslint 'src/**/*.{js,jsx}' '.storybook/**/*.js'",
     "lint": "run-p lint:*",
-    "format:js": "eslint --fix 'src/**/*.{js, jsx}' '.storybook/**/*.js' --config .eslintrc-format",
+    "format:js": "eslint --fix 'src/**/*.{js,jsx}' '.storybook/**/*.js' --config .eslintrc-format",
     "format:css": "prettier --write 'src/components/**/*.css' && stylelint --fix 'src/components/**/*.css' --config .stylelintrc-format",
     "format": "run-p format:*",
     "story": "start-storybook -p 9000 -c .storybook"
