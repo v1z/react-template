@@ -9,6 +9,7 @@ const Container = ({ className, children }) => (
 );
 
 Container.propTypes = {
+  /** Class dropped by component's parent (BEM mixing) */
   className: string,
 };
 

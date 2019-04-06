@@ -15,8 +15,11 @@ export const Example = ({ className, children, clickHandler, counter }) => (
 );
 
 Example.propTypes = {
+  /** Class dropped by component's parent (BEM mixing) */
   className: string,
+  /** Redux store field */
   counter: number,
+  /** Redux action */
   clickHandler: func,
   children: node || string,
 };
