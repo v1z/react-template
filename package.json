@@ -13,7 +13,7 @@
     "format:js": "eslint --fix 'src/**/*.{js,jsx}' '.storybook/**/*.js' --config .eslintrc-format",
     "format:css": "prettier --write 'src/components/**/*.css' && stylelint --fix 'src/components/**/*.css' --config .stylelintrc-format",
     "format": "run-p format:*",
-    "story": "start-storybook -p 9000 -c .storybook"
+    "story": "NODE_ENV=development start-storybook -p 9000 -c .storybook"
   },
   "repository": {
     "type": "git",
@@ -94,10 +94,12 @@
     "mini-css-extract-plugin": "^0.5.0",
     "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "postcss-cssnext": "^3.1.0",
-    "postcss-import": "^12.0.1",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-custom-properties": "^8.0.10",
+    "postcss-flexbugs-fixes": "^4.1.0",
     "postcss-loader": "^3.0.0",
     "postcss-nested": "^4.1.2",
+    "postcss-preset-env": "^6.6.0",
     "prettier": "^1.16.4",
     "style-loader": "^0.23.1",
     "stylelint": "^9.10.1",

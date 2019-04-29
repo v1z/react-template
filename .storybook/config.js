@@ -1,10 +1,9 @@
 import { Fragment } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { Container } from '../src/components/Container';
-import { configure, addDecorator } from '@storybook/react';
+import { Container } from '../src/components/ui/Container/Container';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
-import { configureViewport, INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import '../src/styles/default.css';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 // turn on Info addon
 addDecorator(
@@ -70,18 +69,23 @@ const newViewports = {
 };
 
 // turn on Viewport addon with some custom viewport options
-configureViewport({
-  defaultViewport: 'responsive',
-  viewports: {
-    ...newViewports,
-    ...INITIAL_VIEWPORTS,
+addParameters({
+  viewport: {
+    defaultViewport: 'responsive',
+    viewports: {
+      ...newViewports,
+      ...INITIAL_VIEWPORTS,
+    },
   },
 });
 
-const req = require.context('../src/components', true, /\.stories\.jsx?$/);
+// for propper stories order (ui on top of others)
+const uiStories = require.context('../src/components/ui', true, /\.stories\.jsx?$/);
+const commonStories = require.context('../src/components/common', true, /\.stories\.jsx?$/);
 
 const loadStories = () => {
-  req.keys().forEach(filename => req(filename));
+  uiStories.keys().forEach(filename => uiStories(filename));
+  commonStories.keys().forEach(filename => commonStories(filename));
 };
 
 configure(loadStories, module);

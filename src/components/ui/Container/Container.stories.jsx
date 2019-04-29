@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import Container from './Container';
 
-storiesOf('Container', module)
+storiesOf('ui/Container', module)
   .addParameters({
     info: {
       text: 'Default component for base content wrapping',

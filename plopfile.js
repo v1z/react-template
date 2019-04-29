@@ -2,7 +2,7 @@ const path = require('path');
 
 const templatesDir = path.resolve(`${__dirname}/plop-templates`);
 const rootDir = process.cwd();
-const componentsDir = `${rootDir}/src/components`;
+const componentsDir = `${rootDir}/src/components/common`;
 
 module.exports = plop => {
   plop.setGenerator('component', {

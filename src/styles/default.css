@@ -1,7 +1,7 @@
 @import './normalize.css';
 @import './variables.css';
 
-/* stylelint-disable */
+/* stylelint-disable selector-max-type, selector-max-universal */
 
 *,
 *::after,

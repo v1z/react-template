@@ -1,20 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { someAction } from '../../redux/reducers/common';
+import { someAction } from '../../../redux/reducers/common';
 import { string, number, func, node } from 'prop-types';
 import cn from 'classnames';
 
 import s from './Example.css';
 
-export const Example = ({ className, children, clickHandler, counter }) => (
-  <div className={cn(s.root, className)}>
-    <button type="button" onClick={clickHandler}>
-      {children} {counter}
-    </button>
-  </div>
-);
-
-Example.propTypes = {
+const propTypes = {
   /** Class dropped by component's parent (BEM mixing) */
   className: string,
   /** Redux store field */
@@ -24,10 +16,15 @@ Example.propTypes = {
   children: node || string,
 };
 
-Example.defaultProps = {
-  className: '',
-  children: 'example component',
-};
+export const Example = ({ className = '', children, clickHandler, counter }) => (
+  <div className={cn(s.root, className)}>
+    <button type="button" onClick={clickHandler}>
+      {children} {counter}
+    </button>
+  </div>
+);
+
+Example.propTypes = propTypes;
 
 const mapStateToProps = state => ({
   counter: state.common.someCounter,

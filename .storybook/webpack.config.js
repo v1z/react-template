@@ -1,37 +1,19 @@
-module.exports = ({ config }) => {
-  // postCSS fix - https://github.com/storybooks/storybook/issues/6319
-  config.module.rules = config.module.rules.filter(f => f.test.toString() !== '/\\.css$/');
+const appConfig = require('../webpack.config');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-  config.module.rules = [
-    ...config.module.rules,
-    {
-      test: /\.css$/,
-      loaders: [
-        'style-loader',
-        {
-          loader: require.resolve('css-loader'),
-          options: {
-            importLoaders: 1,
-            modules: true,
-            localIdentName: '[name]__[local]',
-          },
-        },
-        'postcss-loader',
-      ],
-    },
-    {
-      test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-      loader: 'url-loader',
-      options: {
-        limit: 10000,
-      },
-    },
-    {
-      test: /\.stories\.(js|jsx)$/,
-      loaders: [require.resolve('@storybook/addon-storysource/loader')],
-      enforce: 'pre',
-    },
-  ];
+module.exports = ({ config }) => {
+  config.entry = ['./src/styles/default.css', ...config.entry];
+
+  config.module.rules = appConfig.module.rules;
+
+  // enable story source addon
+  config.module.rules.push({
+    test: /\.stories\.(js|jsx)$/,
+    loaders: [require.resolve('@storybook/addon-storysource/loader')],
+    enforce: 'pre',
+  })
+
+  config.plugins = [...config.plugins, new MiniCssExtractPlugin()];
 
   return config;
 };

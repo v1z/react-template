@@ -4,17 +4,15 @@ import cn from 'classnames';
 
 import s from './Container.css';
 
-const Container = ({ className, children }) => (
-  <div className={cn(s.root, className)}>{children}</div>
-);
-
-Container.propTypes = {
+const propTypes = {
   /** Class dropped by component's parent (BEM mixing) */
   className: string,
 };
 
-Container.defaultProps = {
-  className: '',
-};
+const Container = ({ className = '', children }) => (
+  <div className={cn(s.root, className)}>{children}</div>
+);
+
+Container.propTypes = propTypes;
 
 export default Container;

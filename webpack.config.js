@@ -8,9 +8,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
+/* eslint-disable global-require */
+
 module.exports = {
   mode: isDev ? 'development' : 'production',
-  entry: ['./src/styles/default.css', './src/app.js'],
+  entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -32,16 +34,27 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           {
-            loader: require.resolve('css-loader'),
+            loader: 'css-loader',
             options: {
               importLoaders: 1,
               modules: true,
               localIdentName: isDev ? '[name]__[local]' : '[hash:base64:5]',
             },
           },
-          'postcss-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                require('postcss-nested')(),
+                require('postcss-custom-properties')(),
+                require('postcss-custom-media')(),
+                require('postcss-flexbugs-fixes')(),
+                require('postcss-preset-env')(),
+              ],
+            },
+          },
         ],
       },
 

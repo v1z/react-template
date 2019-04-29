@@ -3,7 +3,8 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import appStore from './redux';
 import { initFocusRing } from './utils/scripts/focusRing';
-import { App } from './components/_App';
+import { App } from './components/App';
+import './styles/default.css';
 
 initFocusRing();
 
