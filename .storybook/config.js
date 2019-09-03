@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { Container } from '../src/components/ui/Container/Container';
+import { Container } from '../src/components/_ui/Container';
 import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withInfo } from '@storybook/addon-info';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
@@ -80,8 +80,8 @@ addParameters({
 });
 
 // for propper stories order (ui on top of others)
-const uiStories = require.context('../src/components/ui', true, /\.stories\.jsx?$/);
-const commonStories = require.context('../src/components/common', true, /\.stories\.jsx?$/);
+const uiStories = require.context('../src/components/_ui', true, /\.stories\.jsx?$/);
+const commonStories = require.context('../src/components', true, /\.stories\.jsx?$/);
 
 const loadStories = () => {
   uiStories.keys().forEach(filename => uiStories(filename));

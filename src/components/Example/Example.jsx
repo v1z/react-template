@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { someAction } from '../../../redux/reducers/common';
+import { someAction } from '../../redux/reducers/common';
 import { string, number, func, node } from 'prop-types';
 import cn from 'classnames';
 
