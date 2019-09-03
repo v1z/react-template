@@ -1,0 +1,29 @@
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { someAction } from '../../redux/actions';
+import { string } from 'prop-types';
+import cn from 'classnames';
+
+import s from './{{pascalCase name}}.css';
+
+const propTypes = {
+  /** Class dropped by component's parent (BEM mixing) */
+  className: string,
+};
+
+export const {{pascalCase name}} = ({ className = '' }) => {
+  // const stateValue = useSelector(state => state.value);
+  // const dispatchAction = useDispatch();
+
+  // const handleClick = () => dispatchAction(someAction()); // pass any payload as argument for action
+
+  return (
+    <div className={cn(s.root, className)}>
+      {/* component content */}
+    </div>
+  )
+};
+
+{{pascalCase name}}.propTypes = propTypes;
+
+export default {{pascalCase name}};

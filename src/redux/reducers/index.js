@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { reducer as common } from './common';
+import { common } from './common';
 import { reduceReducers } from '../../utils/scripts/reduceReducers';
 
 const combinedReducer = combineReducers({

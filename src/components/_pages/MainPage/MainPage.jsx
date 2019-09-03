@@ -8,6 +8,7 @@ export default () => (
   <main>
     <Container>
       <Example />
+      <Example incBy={2} />
     </Container>
   </main>
 );

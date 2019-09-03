@@ -2,7 +2,7 @@ const path = require('path');
 
 const templatesDir = path.resolve(`${__dirname}/plop-templates`);
 const rootDir = process.cwd();
-const componentsDir = `${rootDir}/src/components/common`;
+const componentsDir = `${rootDir}/src/components`;
 
 module.exports = plop => {
   plop.setGenerator('component', {
@@ -12,12 +12,6 @@ module.exports = plop => {
         type: 'input',
         name: 'name',
         message: 'Component name is?',
-      },
-      {
-        type: 'confirm',
-        name: 'stateless',
-        default: true,
-        message: 'Should it be stateless (functional style) (YES by default) ?',
       },
       {
         type: 'confirm',
@@ -44,9 +38,7 @@ module.exports = plop => {
         {
           type: 'add',
           path: `${componentsDir}/{{pascalCase name}}/{{pascalCase name}}.jsx`,
-          templateFile: `${templatesDir}${data.connected ? '/redux' : ''}/${
-            data.stateless ? 'stateless' : 'stateful'
-          }.hbs`,
+          templateFile: `${templatesDir}${data.connected ? '/redux' : ''}/component.hbs`,
           data: { name: 'name' },
         },
         {

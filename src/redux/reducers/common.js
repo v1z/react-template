@@ -1,17 +1,15 @@
-import { createReducer, createAction } from 'redux-act';
-
-// handle field complete
-export const someAction = createAction('action done');
+import { handleActions } from 'redux-actions';
+import * as actions from '../actions';
 
 const initialState = {
   someCounter: 0,
 };
 
-export const reducer = createReducer(
+export const common = handleActions(
   {
-    [someAction]: state => ({
+    [actions.someAction]: (state, { payload }) => ({
       ...state, // unnecessary in this case
-      someCounter: state.someCounter + 1,
+      someCounter: state.someCounter + payload,
     }),
   },
   initialState
