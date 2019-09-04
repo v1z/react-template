@@ -21,7 +21,7 @@ export const Example = ({ className = '', incBy = 1 }) => {
 
   return (
     <button className={cn(s.root, className)} type="button" onClick={handleClick}>
-      {stateValue}
+      {`state value is: ${stateValue}`}
     </button>
   );
 };
