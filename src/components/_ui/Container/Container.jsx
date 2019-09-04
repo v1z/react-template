@@ -7,10 +7,14 @@ import s from './Container.css';
 const propTypes = {
   /** Class dropped by component's parent (BEM mixing) */
   className: string,
+  /** Aria role */
+  role: string,
 };
 
-const Container = ({ className = '', children }) => (
-  <div className={cn(s.root, className)}>{children}</div>
+const Container = ({ className = '', children, role }) => (
+  <div className={cn(s.root, className)} role={role || undefined}>
+    {children}
+  </div>
 );
 
 Container.propTypes = propTypes;

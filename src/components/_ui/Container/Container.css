@@ -3,20 +3,21 @@
 .root {
   margin-right: auto;
   margin-left: auto;
-  padding-right: 18px;
-  padding-left: 18px;
+  padding-right: var(--grid-padding);
+  padding-left: var(--grid-padding);
   width: 100%;
-  max-width: 564px;
+  max-width: var(--grid-content-fluid);
 
   @media (--tablet-large) {
-    max-width: 856px;
+    width: var(--grid-content-tablet);
+    max-width: none;
   }
 
   @media (--desktop) {
-    max-width: 1084px;
+    width: var(--grid-content-desktop);
   }
 
   @media (--desktop-large) {
-    max-width: 1236px;
+    width: var(--grid-content-desktop-large);
   }
 }
