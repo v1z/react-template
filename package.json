@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "build": "NODE_ENV=production webpack",
-    "start": "NODE_ENV=development webpack-dev-server --mode development",
+    "start": "NODE_ENV=development webpack-dev-server --hot--mode development",
     "make": "plop",
     "lint:css": "stylelint 'src/components/**/*.css'",
     "lint:js": "eslint 'src/**/*.{js,jsx}' '.storybook/**/*.js'",
