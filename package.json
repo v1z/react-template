@@ -8,9 +8,10 @@
     "start": "NODE_ENV=development webpack-dev-server --hot--mode development",
     "make": "plop",
     "lint:css": "stylelint 'src/components/**/*.css'",
-    "lint:js": "eslint 'src/**/*.{js,jsx,ts,tsx}' '.storybook/**/*.js'",
+    "lint:js": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:types": "tsc",
     "lint": "run-p lint:*",
-    "format:js": "eslint --fix 'src/**/*.{js,jsx}' '.storybook/**/*.js' --config .eslintrc-format",
+    "format:js": "prettier --write 'src/**/*.{js,jsx,ts,tsx}' && eslint --fix 'src/**/*.{js,jsx,ts,tsx}' --config .eslintrc-format.js",
     "format:css": "prettier --write 'src/components/**/*.css' && stylelint --fix 'src/components/**/*.css' --config .stylelintrc-format",
     "format": "run-p format:*",
     "story": "NODE_ENV=development start-storybook -p 9000 -c .storybook"
@@ -35,7 +36,14 @@
         "git add"
       ],
       "*.{js,jsx}": [
-        "eslint --fix --config .eslintrc-format",
+        "prettier --write",
+        "eslint --fix --config .eslintrc-format.js",
+        "git add"
+      ],
+      "*.{ts,tsx}": [
+        "prettier --write",
+        "eslint --fix --config .eslintrc-format.js",
+        "tsc",
         "git add"
       ],
       "*.{md,json}": [
@@ -77,6 +85,7 @@
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.2",
+    "@types/react-router-dom": "^4.3.5",
     "@types/redux-actions": "^2.6.1",
     "@types/storybook__addon-knobs": "^5.0.3",
     "@types/storybook__react": "^4.0.2",
@@ -89,7 +98,6 @@
     "css-loader": "^2.1.1",
     "eslint": "^6.3.0",
     "eslint-config-prettier": "^6.2.0",
-    "eslint-config-react-app": "^5.0.1",
     "eslint-plugin-flowtype": "^4.3.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",

@@ -1,4 +1,5 @@
 {
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
@@ -7,7 +8,7 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "noImplicitAny": true,
+    "noImplicitAny": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "removeComments": false,
@@ -16,6 +17,8 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "strictNullChecks": true,
-    "declaration": true
+    "declaration": true,
+    "noEmit": true,
+    "allowJs": true
   }
 }
