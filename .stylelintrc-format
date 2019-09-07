@@ -78,7 +78,12 @@
       "flex",
       "order",
     ],
-    "property-no-unknown": true,
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": ["composes"]
+      }
+    ],
     "rule-empty-line-before": [
       "always-multi-line",
       {
