@@ -1,20 +1,14 @@
 import React from 'react';
-import { string } from 'prop-types';
 import cn from 'classnames';
 
 import s from './{{pascalCase name}}.css';
 
-const propTypes = {
-  /** Class dropped by component's parent (BEM mixing) */
-  className: string,
-}
+type Props = {
+  className?: string;
+};
 
-const {{pascalCase name}} = ({ className = '' }) => (
+export const {{pascalCase name}}: React.FC<Props> = ({ className }) => (
   <div className={cn(s.root, className)}>
     {/* component content */}
   </div>
 );
-
-{{pascalCase name}}.propTypes = propTypes;
-
-export default {{pascalCase name}};

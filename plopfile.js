@@ -26,8 +26,8 @@ module.exports = plop => {
       actions.push(
         {
           type: 'add',
-          path: `${componentsDir}/{{pascalCase name}}/index.js`,
-          templateFile: `${templatesDir}/index.js`,
+          path: `${componentsDir}/{{pascalCase name}}/index.ts`,
+          templateFile: `${templatesDir}/index.ts`,
           data: { name: 'name' },
         },
         {
@@ -37,15 +37,14 @@ module.exports = plop => {
         },
         {
           type: 'add',
-          path: `${componentsDir}/{{pascalCase name}}/{{pascalCase name}}.jsx`,
+          path: `${componentsDir}/{{pascalCase name}}/{{pascalCase name}}.tsx`,
           templateFile: `${templatesDir}${data.connected ? '/redux' : ''}/component.hbs`,
           data: { name: 'name' },
         },
         {
           type: 'add',
-          path: `${componentsDir}/{{pascalCase name}}/{{pascalCase name}}.stories.jsx`,
-          templateFile: `${templatesDir}${data.connected ? '/redux' : ''}/story.hbs`,
-          data: { type: 'type' },
+          path: `${componentsDir}/{{pascalCase name}}/{{pascalCase name}}.stories.tsx`,
+          templateFile: `${templatesDir}/story.hbs`,
         }
       );
 

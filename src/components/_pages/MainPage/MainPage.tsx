@@ -4,7 +4,7 @@ import { Example } from '../../Example';
 
 // import s from './MainPage.css';
 
-export default () => (
+export const MainPage = () => (
   <main>
     <Container>
       <Example />

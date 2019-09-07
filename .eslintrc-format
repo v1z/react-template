@@ -4,19 +4,17 @@
   "plugins": [
     "prettier",
     "react",
-    "import"
+    "@typescript-eslint"
   ],
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "rules": {
-    "prettier/prettier": "error",
+    "react/prop-types": "off",
     "complexity": ["error", 4],
-    "semi": ["error", "always"],
     "global-require": "error",
-    "no-unused-vars": "error",
+    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": false }],
+    "no-console": "warn",
     "no-case-declarations": 0,
     "no-param-reassign": ["error", { "props": false }],
-    "comma-dangle": ["error", "always-multiline"],
-    "arrow-parens": ["error", "as-needed", { "requireForBlockBody": false }],
     "no-underscore-dangle": [
       "error",
       {
@@ -24,60 +22,25 @@
         "allow": ["__", "__data", "__html"]
       }
     ],
-    "max-len": ["error", 250],
-    "react/jsx-no-bind":
-    [
-      "error",
-      {
-        "ignoreRefs": true,
-        "allowArrowFunctions": true,
-        "allowBind": false
-      }
-    ],
+    "@typescript-eslint/no-angle-bracket-type-assertion": "off",
     "react/jsx-no-duplicate-props": "error",
     "react/no-string-refs": "error",
     "react/prefer-es6-class": ["error", "always"],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-pascal-case": "error",
+    "react/jsx-key": "warn",
     "react/jsx-handler-names": [
-      "error",
+      "warn",
       {
         "eventHandlerPrefix": "handle",
         "eventHandlerPropPrefix": "on"
       }
     ],
-    "jsx-a11y/label-has-for": [ 2, {
-      "components": [ "Label" ],
-      "required": {
-          "every": [ "id" ]
-      },
-      "allowChildren": false
-    }],
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "prettier/prettier": "error",
+    "semi": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    "max-len": ["error", 250],
     "jsx-quotes": ["error", "prefer-double"],
-    "import/no-duplicates": "error",
-    "import/no-named-as-default": "error",
-    "import/named": "error",
-    "import/namespace": "error",
-    "import/default": "error",
-    "import/export": "error",
-    "import/imports-first": "error",
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "indent": ["error", 2, { "SwitchCase": 1 }],
-    "react/sort-comp":
-    [
-      "error",
-      {
-        "order": [
-          "static-methods",
-          "lifecycle",
-          "/^handle.+$/",
-          "/^(get|set)(?!(InitialState$|DefaultProps$|ChildContext$)).+$/",
-          "everything-else",
-          "/^render.+$/",
-          "render"
-        ]
-      }
-    ],
-    "no-console": "error"
+    "indent": ["error", 2, { "SwitchCase": 1 }]
   }
 }

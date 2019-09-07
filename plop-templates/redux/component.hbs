@@ -1,17 +1,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { someAction } from '../../redux/actions';
-import { string } from 'prop-types';
 import cn from 'classnames';
 
 import s from './{{pascalCase name}}.css';
 
-const propTypes = {
-  /** Class dropped by component's parent (BEM mixing) */
-  className: string,
+type Props = {
+  className?: string;
 };
 
-export const {{pascalCase name}} = ({ className = '' }) => {
+export const {{pascalCase name}}: React.FC<Props> = ({ className }) => {
   // const stateValue = useSelector(state => state.value);
   // const dispatchAction = useDispatch();
 
@@ -23,7 +21,3 @@ export const {{pascalCase name}} = ({ className = '' }) => {
     </div>
   )
 };
-
-{{pascalCase name}}.propTypes = propTypes;
-
-export default {{pascalCase name}};

@@ -7,7 +7,7 @@ const initialState = {
 
 export const common = handleActions(
   {
-    [actions.someAction]: (state, { payload }) => ({
+    [`${actions.someAction}`]: (state: any, { payload }) => ({
       ...state, // unnecessary in this case
       someCounter: state.someCounter + payload,
     }),
