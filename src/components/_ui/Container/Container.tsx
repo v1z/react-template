@@ -7,8 +7,11 @@ type Props = {
   role?: string;
 };
 
-export const Container: React.FC<Props> = ({children, className, role}) => (
-  <div className={cn(s.root, className)} role={role}>
+export const Container: React.FC<Props> = ({ children, className, role = undefined }) => (
+  <div
+    className={cn(s.root, className)}
+    role={role}
+  >
     {children}
   </div>
 );

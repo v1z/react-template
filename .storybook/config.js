@@ -80,8 +80,8 @@ addParameters({
 });
 
 // for propper stories order (ui on top of others)
-const uiStories = require.context('../src/components/_ui', true, /\.stories\.jsx?$/);
-const commonStories = require.context('../src/components', true, /\.stories\.jsx?$/);
+const uiStories = require.context('../src/components/_ui', true, /\.stories\.(j|t)sx?$/);
+const commonStories = require.context('../src/components', true, /\.stories\.(j|t)sx?$/);
 
 const loadStories = () => {
   uiStories.keys().forEach(filename => uiStories(filename));

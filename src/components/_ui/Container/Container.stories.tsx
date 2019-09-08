@@ -1,7 +1,7 @@
 import React from 'react';
-import {storiesOf} from '@storybook/react';
-import {withKnobs, text} from '@storybook/addon-knobs';
-import {Container} from './Container';
+import { storiesOf } from '@storybook/react';
+import { withKnobs, text } from '@storybook/addon-knobs';
+import { Container } from './Container';
 
 const knobs = () => ({
   role: text('Role', ''),
@@ -10,9 +10,9 @@ const knobs = () => ({
 storiesOf('ui/Container', module)
   .addDecorator(withKnobs)
   .add('Default', () => (
-    <div style={{backgroundColor: 'lightblue'}}>
+    <div style={{ backgroundColor: 'lightblue' }}>
       <Container {...knobs()}>
-        <div style={{padding: '20px', backgroundColor: '#ffdd2d'}}>Container content</div>
+        <div style={{ padding: '20px', backgroundColor: '#ffdd2d' }}>Container content</div>
       </Container>
     </div>
   ));

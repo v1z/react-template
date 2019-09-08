@@ -4,6 +4,7 @@ module.exports = {
   ...mainConfig,
   rules: {
     ...mainConfig.rules,
+    '@typescript-eslint/member-delimiter-style': 'error',
     'react/jsx-max-props-per-line': ['error', { maximum: 1, when: 'always' }],
     'react/jsx-first-prop-new-line': ['error', 'multiline-multiprop'],
     'react/jsx-closing-bracket-location': 1,

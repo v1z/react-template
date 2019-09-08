@@ -25,7 +25,7 @@
   "homepage": "https://github.com/v1z/react-template#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "tsc && lint-staged"
     }
   },
   "lint-staged": {
@@ -34,15 +34,9 @@
       "stylelint --fix --config .stylelintrc-format.js",
       "git add"
     ],
-    "*.{js,jsx}": [
+    "*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint --fix --config .eslintrc-format.js",
-      "git add"
-    ],
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "eslint --fix --config .eslintrc-format.js",
-      "tsc",
       "git add"
     ],
     "*.{md,json}": [
