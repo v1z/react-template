@@ -12,7 +12,7 @@
     "lint:types": "tsc",
     "lint": "run-p lint:*",
     "format:js": "prettier --write 'src/**/*.{js,jsx,ts,tsx}' && eslint --fix 'src/**/*.{js,jsx,ts,tsx}' --config .eslintrc-format.js",
-    "format:css": "prettier --write 'src/components/**/*.css' && stylelint --fix 'src/components/**/*.css' --config .stylelintrc-format",
+    "format:css": "prettier --write 'src/components/**/*.css' && stylelint --fix 'src/components/**/*.css' --config .stylelintrc-format.js",
     "format": "run-p format:*",
     "story": "NODE_ENV=development start-storybook -p 9000 -c .storybook"
   },
@@ -32,7 +32,7 @@
     "linters": {
       "*.css": [
         "prettier --write",
-        "stylelint --fix --config .stylelintrc-format",
+        "stylelint --fix --config .stylelintrc-format.js",
         "git add"
       ],
       "*.{js,jsx}": [
