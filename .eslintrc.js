@@ -7,7 +7,6 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    project: './tsconfig.json',
   },
   settings: {
     react: {
@@ -24,6 +23,7 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': 'off',
     '@typescript-eslint/no-explicit-any': 'off', // TODO: remove it
     '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/member-delimiter-style': 'off',
     // react stuff
     'react/jsx-handler-names': 'error', // TODO: fix it to work
     // a11y stuff

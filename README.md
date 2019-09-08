@@ -20,3 +20,8 @@
 - `make` - generate new file from template
 - `lint` - run both eslint and stylelint with quality configs plus cheking the types
 - `format` - run both eslint and stylelint with format configs (extends qulity configs with formatting rules) and `--fix` option
+
+# What's next
+
+- bunch of a11y ready default components
+- tests for the components

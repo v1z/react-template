@@ -6,6 +6,7 @@ module.exports = {
   plugins: [...mainConfig.plugins, 'stylelint-order'],
   rules: {
     ...mainConfig.rules,
+    '@typescript-eslint/member-delimiter-style': 'error',
     'at-rule-empty-line-before': [
       'always',
       {

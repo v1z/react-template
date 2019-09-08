@@ -4,7 +4,7 @@ const HtmlWebPackPlugin = require('html-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const isDev = process.env.NODE_ENV !== 'production';
 
@@ -39,8 +39,9 @@ module.exports = {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-              modules: true,
-              localIdentName: isDev ? '[name]__[local]' : '[hash:base64:5]',
+              modules: {
+                localIdentName: isDev ? '[name]__[local]' : '[hash:base64:5]',
+              },
             },
           },
           {

@@ -1,14 +1,14 @@
 declare module '*.css' {
-  interface IClassNames {
-    [className: string]: string
+  interface ClassNames {
+    [className: string]: string;
   }
 
-  const classNames: IClassNames
+  const classNames: ClassNames;
 
-  export = classNames
+  export = classNames;
 }
 
 declare module '*.svg' {
-  const content: any
-  export default content
+  const content: any;
+  export default content;
 }
