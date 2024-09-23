@@ -9,12 +9,11 @@
     "make": "plop",
     "lint:css": "stylelint 'src/components/**/*.css'",
     "lint:js": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
-    "lint:types": "tsc",
+    "lint:types": "tsc --noEmit --skipLibCheck",
     "lint": "run-p lint:*",
     "format:js": "prettier --write 'src/**/*.{js,jsx,ts,tsx}' && eslint --fix 'src/**/*.{js,jsx,ts,tsx}' --config .eslintrc-format.js",
     "format:css": "prettier --write 'src/components/**/*.css' && stylelint --fix 'src/components/**/*.css' --config .stylelintrc-format.js",
-    "format": "run-p format:*",
-    "story": "NODE_ENV=development start-storybook -p 9000 -c .storybook"
+    "format": "run-p format:*"
   },
   "repository": {
     "type": "git",
@@ -23,11 +22,6 @@
   "author": "v1z",
   "license": "MIT",
   "homepage": "https://github.com/v1z/react-template#readme",
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsc && lint-staged"
-    }
-  },
   "lint-staged": {
     "*.css": [
       "prettier --write",
@@ -45,10 +39,11 @@
     ]
   },
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "react": "^16.9.0",
+    "react-bootstrap": "^2.10.4",
     "react-dom": "^16.9.0",
     "react-redux": "^7.1.1",
-    "react-router-dom": "^5.0.1",
     "redux": "^4.0.4",
     "redux-actions": "^2.6.5",
     "smoothscroll": "^0.4.0"
@@ -60,25 +55,13 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.6.0",
-    "@storybook/addon-actions": "^5.1.11",
-    "@storybook/addon-info": "^5.1.11",
-    "@storybook/addon-knobs": "^5.1.11",
-    "@storybook/addon-notes": "^5.1.11",
-    "@storybook/addon-storysource": "^5.1.11",
-    "@storybook/addon-viewport": "^5.1.11",
-    "@storybook/addons": "^5.1.11",
-    "@storybook/react": "^5.1.11",
-    "@storybook/theming": "^5.1.11",
     "@types/classnames": "^2.2.9",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "@types/react-redux": "^7.1.2",
-    "@types/react-router-dom": "^4.3.5",
     "@types/redux-actions": "^2.6.1",
-    "@types/storybook__addon-knobs": "^5.0.3",
-    "@types/storybook__react": "^4.0.2",
-    "@typescript-eslint/eslint-plugin": "^2.1.0",
-    "@typescript-eslint/parser": "^2.1.0",
+    "@typescript-eslint/eslint-plugin": "^5.21.0",
+    "@typescript-eslint/parser": "^5.21.0",
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
     "clean-webpack-plugin": "^3.0.0",
@@ -119,7 +102,7 @@
     "stylelint-order": "^3.1.0",
     "stylelint-value-no-unknown-custom-properties": "^2.0.0",
     "terser-webpack-plugin": "^2.0.1",
-    "typescript": "^3.6.2",
+    "typescript": "^4.7.4",
     "url-loader": "^2.1.0",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.7",

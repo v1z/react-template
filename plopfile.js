@@ -40,11 +40,6 @@ module.exports = plop => {
           path: `${componentsDir}/{{pascalCase name}}/{{pascalCase name}}.tsx`,
           templateFile: `${templatesDir}${data.connected ? '/redux' : ''}/component.hbs`,
           data: { name: 'name' },
-        },
-        {
-          type: 'add',
-          path: `${componentsDir}/{{pascalCase name}}/{{pascalCase name}}.stories.tsx`,
-          templateFile: `${templatesDir}/story.hbs`,
         }
       );
 
