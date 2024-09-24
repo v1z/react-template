@@ -1,16 +1,18 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import appStore from './redux';
+import { store } from './store';
 import { initFocusRing } from './utils/scripts/focusRing';
 import { App } from './components/App';
 import './styles/default.css';
 
 initFocusRing();
 
-render(
-  <Provider store={appStore}>
+const container = document.getElementById('root');
+const root = createRoot(container!);
+
+root.render(
+  <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container } from '../../_ui/Container';
-import { Example } from '../../Example';
+import { Example } from '../../../features/counter/components/Example';
 
 // import s from './MainPage.css';
 

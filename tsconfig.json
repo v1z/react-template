@@ -1,5 +1,5 @@
 {
-  "include": ["src/typings.d.ts", "src/**/*.tsx", "src/**/*.ts"],
+  "include": ["typings.d.ts", "src/**/*.tsx", "src/**/*.ts"],
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
