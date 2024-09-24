@@ -1,10 +1,10 @@
 # What's inside
 
 - [TypeScript](https://www.typescriptlang.org/)
-- [React 16](https://reactjs.org/) (hooks friendly)
-- [Redux](https://redux.js.org/) (with [redux-actions](https://github.com/redux-utilities/redux-actions))
+- [React](https://reactjs.org/)
+- [Redux](https://redux.js.org/)
 - [Webpack 4](https://webpack.js.org/)
-- [PostCSS](https://postcss.org/) (CSS modules on steroids)
+- [PostCSS](https://postcss.org/)
 - [ESlint](https://eslint.org/) & [Stylelint](https://stylelint.io/) (each with 2 configs - quality & format)
 - [Husky](https://github.com/typicode/husky) + [lint-staged](https://github.com/okonet/lint-staged) (pre-commit hook for code linting/formatting ([russian language article](http://blog.csssr.ru/2018/12/05/lint-your-css)))
 - [Prettier](https://prettier.io/)

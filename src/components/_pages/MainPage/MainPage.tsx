@@ -1,6 +1,7 @@
-import React from 'react';
-import { Container } from '../../_ui/Container';
-import { Example } from '../../../features/counter/components/Example';
+import React from 'react'
+
+import { Example } from '../../../features/counter/components/Example'
+import { Container } from '../../_ui/Container'
 
 // import s from './MainPage.css';
 
@@ -11,4 +12,4 @@ export const MainPage = () => (
       <Example incBy={2} />
     </Container>
   </main>
-);
+)
