@@ -1,12 +1,12 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const TerserJSPlugin = require('terser-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-const isDev = process.env.NODE_ENV !== 'production';
+const isDev = process.env.NODE_ENV !== 'production'
 
 /* eslint-disable global-require */
 
@@ -96,10 +96,13 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
-    compress: true,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
     port: 3000,
-    stats: 'minimal',
+    devMiddleware: {
+      stats: 'minimal',
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -108,6 +111,6 @@ module.exports = {
       template: './src/index.html',
       filename: './index.html',
     }),
-    new CopyWebpackPlugin([{ from: 'public' }]),
+    new CopyWebpackPlugin({ patterns: [{ from: 'public' }] }),
   ],
-};
+}
