@@ -5,6 +5,8 @@ const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const dotenv = require('dotenv')
+const { DefinePlugin } = require('webpack')
 
 const isDev = process.env.NODE_ENV !== 'production'
 
@@ -40,7 +42,7 @@ module.exports = {
             options: {
               importLoaders: 1,
               modules: {
-                localIdentName: isDev ? '[name]__[local]' : '[hash:base64:5]',
+                localIdentName: isDev ? '[name]__[local]__[hash:base64:5]' : '[hash:base64:5]',
               },
             },
           },
@@ -65,7 +67,22 @@ module.exports = {
       },
 
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'babel-loader',
+          },
+          {
+            loader: 'react-svg-loader',
+            options: {
+              jsx: true,
+            },
+          },
+        ],
+      },
+
+      {
+        test: /\.(png|jpg|gif)$/,
         use: [
           {
             loader: 'file-loader',
@@ -112,5 +129,8 @@ module.exports = {
       filename: './index.html',
     }),
     new CopyWebpackPlugin({ patterns: [{ from: 'public' }] }),
+    new DefinePlugin({
+      'process.env': JSON.stringify(dotenv.config().parsed),
+    }),
   ],
 }
